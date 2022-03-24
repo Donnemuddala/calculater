@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		input{
+			width: 316px;
+			height: 100px;
+			background-color: orange;
+			border-radius: 0px 20px 0px 20px;
+			border: none;
+			text-align: right;
+			font-size: 35px;
+			color: black;
+		}
+		button{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			padding: 5px;
+			margin: 20px 5px 0px 10px;
+			font-size: 25px;
+			font-weight: 700px;
+			border: none;
+		}
+		h1{
+			text-align: center;
+			margin: 5px;
+			padding: 5px;
+		}
+		#main{
+			text-align: center;
+			background-color: aliceblue;
+			border-radius: 20px;
+			height: 502px;
+			width: 320px;
+			margin-left: 540px;
+		}
+	</style>
+
+</head>
+<body>
+    <h1>calculater</h1>
+	<div id="main">
+		<input type="text" name="results"><br>
+		<button  type="button" onclick="result.value=''">c</button>
+		<button  type="button" onclick="display('%')">%</button>
+		<button  type="button" onclick="back()"><=</button>
+		<button  type="button" onclick="display('/')">/</button>
+		<button  type="button" onclick="display('7')">7</button>
+		<button  type="button" onclick="display('8')">8</button>
+		<button  type="button" onclick="display('9')">9</button>
+		<button  type="button" onclick="display('*')">*</button>
+		<button  type="button" onclick="display('4')">4</button>
+		<button  type="button" onclick="display('5')">5</button>
+		<button  type="button" onclick="display('6')">6</button>
+		<button  type="button" onclick="display('-')">-</button>
+		<button  type="button" onclick="display('1')">1</button>
+		<button  type="button" onclick="display('2')">2</button>
+		<button  type="button" onclick="display('3')">3</button>
+		<button  type="button" onclick="display('+')">+</button>
+		<button  type="button" onclick="display('00')">00</button>
+		<button  type="button" onclick="display('0')">0</button>
+		<button  type="button" onclick="display('.')">.</button>
+		<button  type="button" onclick="solution()">=</button>
+		
+	</div>
+	<script>
+		function display(val) {
+			document.getElementById('result').value+=val
+			
+		}
+		function solution(){
+			const solution=document.getElementById('result').value
+			const sol=eval(solution)
+			document.getElementById('result').value=sol;
+		}
+		function back(){
+			const value=document.getElementById('result').value
+			document.getElementById('result').value=value.substr(0,value.length-1);
+		}
+		function c(val){
+			document.getElementById('result').value=val
+		}
+	</script>
+
+    
+</body>
+</html>
